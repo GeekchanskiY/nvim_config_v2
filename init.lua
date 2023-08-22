@@ -16,7 +16,7 @@ vim.opt.undofile = true
 vim.opt.shell = "/bin/zsh"
 
 -- Mouse
--- vim.opt.mouse = "a"
+vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
 -- Line Numbers
