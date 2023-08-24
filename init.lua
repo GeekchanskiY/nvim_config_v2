@@ -44,6 +44,9 @@ vim.opt.smartindent = true
 
 -- Plugins
 
+vim.opt.termguicolors = true
+require("bufferline").setup{}
+
 local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
 vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
@@ -174,10 +177,16 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
+
+  -- nvim-cmp
   use "neovim/nvim-lspconfig"
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "hrsh7th/nvim-cmp"
+  -- /nvim-cmp
+  
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
 end)
